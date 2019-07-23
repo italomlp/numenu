@@ -1,7 +1,15 @@
 import React from "react";
 
+import LeadForm from "./pages/LeadForm";
+import GlobalStyles from "./styles/global";
+
 function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <LeadForm />
+      <GlobalStyles />
+    </>
+  );
 }
 
 export default App;
