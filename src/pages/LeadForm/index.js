@@ -23,9 +23,7 @@ function LeadForm({ handleChange, handleSubmit, values, errors }) {
 
   function onSubmit(e) {
     e.preventDefault();
-    if (Object.keys(errors).length) {
-      toggleModal();
-    }
+    toggleModal();
     handleSubmit();
   }
 
@@ -71,14 +69,13 @@ function LeadForm({ handleChange, handleSubmit, values, errors }) {
 
         <Button type="submit">Enviar</Button>
       </Form>
-      {!!showModal && (
-        <SubmitModal
-          labels={LABELS}
-          values={values}
-          errors={errors}
-          onClose={toggleModal}
-        />
-      )}
+      <SubmitModal
+        labels={LABELS}
+        values={values}
+        errors={errors}
+        visible={showModal}
+        onClose={toggleModal}
+      />
     </Container>
   );
 }

@@ -20,12 +20,17 @@ function ListItem({ error = false, label, value }) {
 }
 
 export default function SubmitModal({
+  visible = false,
   errors = {},
   values = {},
   labels = {},
   onClose = () => {},
   ...restProps
 }) {
+  if (!visible) {
+    return null;
+  }
+
   const errorsKeys = Object.keys(errors);
   const valuesKeys = Object.keys(values);
   const isError = errorsKeys && !!errorsKeys.length;
@@ -35,7 +40,7 @@ export default function SubmitModal({
 
   return (
     <>
-      <OverlayBackground onClick={onClose} />
+      <OverlayBackground id="overlayBg" onClick={onClose} />
       <Container {...restProps}>
         <h1>Envio</h1>
         {isError ? (
