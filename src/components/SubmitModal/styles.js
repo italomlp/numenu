@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../styles/colors";
 
 export const OverlayBackground = styled.div`
   position: absolute;
@@ -15,7 +16,7 @@ export const Container = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: ${colors.white};
   min-width: 300px;
   min-height: 300px;
   width: 60%;
@@ -65,7 +66,7 @@ export const Label = styled.label`
 
 export const Value = styled.label`
   flex: 2;
-  color: ${({ error }) => (error ? "#880000" : "#007777")};
+  color: ${({ error }) => (error ? colors.warn : colors.primary)};
 `;
 
 export const ActionsContainer = styled.div`

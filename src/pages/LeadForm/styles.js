@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Input from "../../components/Input";
+import { colors } from "../../styles/colors";
 
 export const Container = styled.div`
   display: flex;
@@ -14,10 +15,10 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: ${colors.white};
   padding: 20px;
   border-radius: 30px;
-  border: 2px solid #007777;
+  border: 2px solid ${colors.primary};
   min-width: 300px;
   width: 30%;
 

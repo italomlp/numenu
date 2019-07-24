@@ -54,7 +54,9 @@ export default function SubmitModal({
           ))}
         </div>
         <ActionsContainer>
-          <Button onClick={onClose}>Fechar</Button>
+          <Button theme="warn" onClick={onClose}>
+            Fechar
+          </Button>
         </ActionsContainer>
       </Container>
     </>

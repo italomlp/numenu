@@ -1,4 +1,15 @@
 import { createGlobalStyle } from "styled-components";
+import color from "color";
+import { colors } from "./colors";
+
+const primaryWrappedColor = color(colors.primary);
+
+const documentBgColors = {
+  primary: primaryWrappedColor.alpha(0.01).toString(),
+  second: primaryWrappedColor.alpha(0.12).toString(),
+  third: primaryWrappedColor.alpha(0.4).toString(),
+  forth: primaryWrappedColor.toString()
+};
 
 export default createGlobalStyle`
   * {
@@ -14,7 +25,12 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
-    background: radial-gradient(#00777701 5%, #0077771f 25%, #00777766, #007777ff);
+    background:radial-gradient(
+      ${documentBgColors.primary} 5%,
+      ${documentBgColors.second} 25%,
+      ${documentBgColors.third},
+      ${documentBgColors.forth}
+    );
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
